@@ -1,0 +1,9 @@
+Package: com.seutweak.fakepurchase
+Name: FakePurchase
+Depends: firmware (>= 14.0)
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Fake IAP para o app GoodShort
+Maintainer: SeuNome
+Author: SeuNome
+Section: Tweaks
