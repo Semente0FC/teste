@@ -14,8 +14,9 @@ jobs:
     - name: Checkout repositório
       uses: actions/checkout@v3
 
-    - name: Instalar Theos (simples)
+    - name: Instalar Theos e ldid
       run: |
+        brew install ldid
         git clone --recursive https://github.com/theos/theos.git $HOME/theos
         echo "export THEOS=$HOME/theos" >> $GITHUB_ENV
 
