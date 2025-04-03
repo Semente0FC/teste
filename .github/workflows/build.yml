@@ -1,0 +1,31 @@
+name: Build FakePurchase Tweak
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repositório
+      uses: actions/checkout@v3
+
+    - name: Instalar Theos (simples)
+      run: |
+        git clone --recursive https://github.com/theos/theos.git $HOME/theos
+        echo "export THEOS=$HOME/theos" >> $GITHUB_ENV
+
+    - name: Compilar tweak
+      run: |
+        export THEOS=$HOME/theos
+        make clean package
+
+    - name: Upload do pacote .deb
+      uses: actions/upload-artifact@v3
+      with:
+        name: FakePurchase-deb
+        path: ./packages/*.deb
