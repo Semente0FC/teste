@@ -1,3 +1,6 @@
+#import <StoreKit/StoreKit.h>
+#import <Foundation/Foundation.h>
+
 %hook SKPaymentQueue
 
 - (void)addPayment:(SKPayment *)payment {
