@@ -25,7 +25,7 @@ jobs:
         make clean package
 
     - name: Upload do pacote .deb
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: FakePurchase-deb
         path: ./packages/*.deb
